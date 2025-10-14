@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INEMA BMad Academy - Aprenda a criar soluções com IA</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>INEMA BMad Academy</h1>
+            <p class="tagline">Crie soluções com IA sem ser programador</p>
+        </header>
+
+        <!-- Navigation -->
+        <nav class="nav">
+            <button class="nav-btn active" data-section="home">Início</button>
+            <button class="nav-btn" data-section="tutorial">Tutorial</button>
+            <button class="nav-btn" data-section="playground">Playground</button>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Home Section -->
+            <section id="home" class="section active">
+                <div class="hero">
+                    <h2>O que é BMad Method?</h2>
+                    <p class="hero-text">
+                        BMad é um framework que permite você criar soluções usando agentes de Inteligência Artificial,
+                        mesmo sem conhecimento técnico. É como ter uma equipe de especialistas trabalhando para você.
+                    </p>
+
+                    <div class="features">
+                        <div class="feature-card" onclick="goToLesson(2)">
+                            <div class="feature-icon">🤖</div>
+                            <h3>Agentes Inteligentes</h3>
+                            <p>Use especialistas virtuais: desenvolvedores, designers, gerentes de projeto</p>
+                            <div class="feature-cta">Clique para saber mais →</div>
+                        </div>
+                        <div class="feature-card" onclick="goToLesson(3)">
+                            <div class="feature-icon">⚡</div>
+                            <h3>Rápido e Fácil</h3>
+                            <p>Crie projetos complexos em minutos, não semanas</p>
+                            <div class="feature-cta">Clique para saber mais →</div>
+                        </div>
+                        <div class="feature-card" onclick="goToLesson(5)">
+                            <div class="feature-icon">🎯</div>
+                            <h3>Para Você</h3>
+                            <p>Advogados, médicos, professores - qualquer profissão</p>
+                            <div class="feature-cta">Clique para saber mais →</div>
+                        </div>
+                    </div>
+
+                    <button class="cta-button" onclick="startTutorial()">Começar Agora</button>
+                </div>
+            </section>
+
+            <!-- Tutorial Section -->
+            <section id="tutorial" class="section">
+                <div class="tutorial-container">
+                    <div class="tutorial-sidebar">
+                        <h3>Lições</h3>
+                        <div id="lesson-list" class="lesson-list"></div>
+                    </div>
+
+                    <div class="tutorial-content">
+                        <div id="lesson-content" class="lesson-content">
+                            <h2>Selecione uma lição</h2>
+                            <p>Escolha uma lição no menu à esquerda para começar.</p>
+                        </div>
+
+                        <div class="lesson-navigation">
+                            <button id="prev-lesson" class="lesson-nav-btn" onclick="previousLesson()">← Anterior</button>
+                            <button id="next-lesson" class="lesson-nav-btn" onclick="nextLesson()">Próximo →</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Playground Section -->
+            <section id="playground" class="section">
+                <div class="playground-container">
+                    <h2>Playground Interativo</h2>
+                    <p class="playground-intro">Experimente comandos do BMad aqui!</p>
+
+                    <div class="playground-content">
+                        <div class="terminal">
+                            <div class="terminal-header">
+                                <span class="terminal-title">Terminal BMad</span>
+                            </div>
+                            <div id="terminal-output" class="terminal-output">
+                                <div class="terminal-line">$ Bem-vindo ao playground do BMad!</div>
+                                <div class="terminal-line">$ Digite um comando ou selecione um exemplo abaixo.</div>
+                            </div>
+                            <div class="terminal-input-container">
+                                <span class="terminal-prompt">$</span>
+                                <input type="text" id="terminal-input" class="terminal-input" placeholder="Digite um comando...">
+                            </div>
+                        </div>
+
+                        <div class="examples">
+                            <h3>Exemplos Rápidos</h3>
+                            <button class="example-btn" onclick="runExample('status')">npx bmad-method status</button>
+                            <button class="example-btn" onclick="runExample('list')">npx bmad-method list:agents</button>
+                            <button class="example-btn" onclick="runExample('help')">npx bmad-method help</button>
+                            <button class="example-btn" onclick="runExample('config')">npx bmad-method list:config</button>
+                            <button class="example-btn" onclick="runExample('expansions')">npx bmad-method list:expansions</button>
+                            <button class="example-btn" onclick="runExample('update-check')">npx bmad-method update-check</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>INEMA BMad Academy - Aprenda a criar com IA © 2025</p>
+        </footer>
+    </div>
+
+    <!-- Chat Bot -->
+    <div id="chat-widget">
+        <button id="chat-toggle" class="chat-toggle" onclick="toggleChat()">
+            <span id="chat-icon">💬</span>
+        </button>
+
+        <div id="chat-window" class="chat-window">
+            <div class="chat-header">
+                <h3>💬 Assistente BMad</h3>
+                <button class="chat-close" onclick="toggleChat()">✕</button>
+            </div>
+
+            <div id="chat-messages" class="chat-messages">
+                <div class="chat-message bot">
+                    <div class="message-content">
+                        Olá! Sou seu assistente da INEMA BMad Academy. Tire suas dúvidas sobre o BMad Method!
+                    </div>
+                </div>
+                <div class="chat-message bot">
+                    <div class="message-content">
+                        Experimente perguntar:
+                        <br>• O que é BMad?
+                        <br>• Como instalar?
+                        <br>• Quais são os agentes?
+                        <br>• Como criar meu primeiro projeto?
+                    </div>
+                </div>
+            </div>
+
+            <div class="chat-input-container">
+                <input type="text" id="chat-input" class="chat-input" placeholder="Digite sua pergunta..." onkeypress="handleChatEnter(event)">
+                <button class="chat-send" onclick="sendChatMessage()">Enviar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/knowledge.js"></script>
+    <script src="js/lessons.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/chat.js"></script>
+</body>
+</html>
