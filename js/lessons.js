@@ -510,5 +510,1010 @@ const lessons = [
 
             <p><strong>Economia de tempo:</strong> 80% mais rápido que fazer manualmente!</p>
         `
+    },
+    {
+        id: 10,
+        title: "Atualização e Expansões",
+        content: `
+            <h2>Mantendo o BMad Atualizado</h2>
+            <p>Aprenda a manter seu BMad sempre na versão mais recente e como expandir suas funcionalidades.</p>
+
+            <h3>🔄 Verificando Atualizações</h3>
+
+            <h4>Verificar sem instalar</h4>
+            <code>npx bmad-method update-check</code>
+            <p><em>Mostra se há versão mais recente disponível, sem fazer alterações</em></p>
+
+            <h4>Ver versão atual</h4>
+            <code>npx bmad-method status</code>
+            <p>A primeira linha mostra a versão instalada: <code>Version: 4.44.1</code></p>
+
+            <h3>⬆️ Atualizando o BMad</h3>
+
+            <h4>Passo 1: Fazer Backup</h4>
+            <p><strong>Muito importante!</strong> Sempre faça backup antes de atualizar:</p>
+            <ul>
+                <li>Copie a pasta <code>.bmad-core/</code> para local seguro</li>
+                <li>Ou faça commit no Git: <code>git add . && git commit -m "Backup antes de atualizar BMad"</code></li>
+            </ul>
+
+            <h4>Passo 2: Executar Atualização</h4>
+            <code>npx bmad-method update</code>
+            <p><em>O comando baixa e instala a versão mais recente automaticamente</em></p>
+
+            <h4>Passo 3: Verificar Atualização</h4>
+            <code>npx bmad-method status</code>
+            <p>Confirme que a versão foi atualizada corretamente</p>
+
+            <h3>📦 Pacotes de Expansão</h3>
+
+            <p>Expanda as capacidades do BMad com pacotes especializados:</p>
+
+            <h4>Ver Pacotes Disponíveis</h4>
+            <code>npx bmad-method list:expansions</code>
+
+            <p><strong>Pacotes Principais:</strong></p>
+            <ul>
+                <li><strong>bmad-2d-phaser-game-dev</strong> - Desenvolvimento de jogos 2D</li>
+                <li><strong>bmad-infrastructure-devops</strong> - DevOps e infraestrutura</li>
+                <li><strong>bmad-creative-writing</strong> - Escrita criativa</li>
+                <li><strong>bmad-godot-game-dev</strong> - Desenvolvimento com Godot</li>
+                <li><strong>bmad-mobile-dev</strong> - Desenvolvimento mobile</li>
+            </ul>
+
+            <h4>Adicionar Expansão</h4>
+            <code>npx bmad-method add:expansion bmad-2d-phaser-game-dev</code>
+            <p><em>Adiciona agentes especializados em jogos 2D</em></p>
+
+            <code>npx bmad-method add:expansion bmad-infrastructure-devops</code>
+            <p><em>Adiciona agentes DevOps, Docker, Kubernetes, etc.</em></p>
+
+            <h4>Verificar Expansões Instaladas</h4>
+            <code>npx bmad-method list:agents</code>
+            <p>Os agentes das expansões aparecem na lista com suas especialidades</p>
+
+            <h3>🗑️ Removendo Agentes</h3>
+
+            <p>Se precisar remover um agente que não usa mais:</p>
+            <code>npx bmad-method remove:agent writer</code>
+            <p><em>Remove o agente writer do projeto</em></p>
+
+            <p><strong>⚠️ Atenção:</strong> Não remova agentes essenciais como dev, pm ou architect</p>
+
+            <h3>🔍 Visualizar Configuração</h3>
+
+            <code>npx bmad-method show:config</code>
+            <p>Exibe todo o conteúdo do arquivo <code>bmad-config.json</code></p>
+
+            <h3>💡 Boas Práticas de Atualização</h3>
+
+            <ul>
+                <li>📅 <strong>Frequência:</strong> Verifique atualizações semanalmente</li>
+                <li>💾 <strong>Backup:</strong> Sempre antes de atualizar</li>
+                <li>📝 <strong>Changelog:</strong> Leia as notas de versão</li>
+                <li>🧪 <strong>Teste:</strong> Teste em projeto de teste primeiro</li>
+                <li>🔒 <strong>Produção:</strong> Só atualize em produção após testar</li>
+            </ul>
+
+            <h3>🎯 Quando Usar Expansões?</h3>
+
+            <p><strong>Use expansões quando:</strong></p>
+            <ul>
+                <li>Precisa de agentes especializados para sua área</li>
+                <li>Vai desenvolver projetos específicos (jogos, DevOps, etc.)</li>
+                <li>Quer acelerar trabalho em nicho específico</li>
+            </ul>
+
+            <p><strong>Não use expansões se:</strong></p>
+            <ul>
+                <li>É iniciante (comece com agentes básicos)</li>
+                <li>Não precisa de funcionalidades especializadas</li>
+                <li>Quer manter instalação leve e rápida</li>
+            </ul>
+
+            <p><strong>Próxima lição:</strong> Aprenda a migrar projetos entre versões do BMad!</p>
+        `
+    },
+    {
+        id: 11,
+        title: "Migração de Projetos",
+        content: `
+            <h2>Migrando Projetos Entre Versões</h2>
+            <p>Como migrar projetos antigos para novas versões do BMad sem perder trabalho.</p>
+
+            <h3>🔍 Detectando Versões Antigas</h3>
+
+            <p>Abra um projeto antigo e execute:</p>
+            <code>npx bmad-method status</code>
+
+            <p><strong>Sinais de versão desatualizada:</strong></p>
+            <ul>
+                <li>❌ Versão diferente da mais recente</li>
+                <li>⚠️ Warnings sobre arquivos obsoletos</li>
+                <li>🔴 Erros ao executar comandos</li>
+                <li>📝 Estrutura de pastas diferente</li>
+            </ul>
+
+            <h3>📋 Checklist de Migração</h3>
+
+            <h4>1. Backup Completo</h4>
+            <p>Antes de qualquer coisa:</p>
+            <code>cp -r .bmad-core .bmad-core.backup</code>
+            <p>Ou faça commit no Git:</p>
+            <code>git add . && git commit -m "Backup antes de migrar BMad"</code>
+
+            <h4>2. Anotar Configurações Atuais</h4>
+            <code>npx bmad-method show:config</code>
+            <p>Salve a saída em um arquivo para referência:</p>
+            <code>npx bmad-method show:config > config-backup.txt</code>
+
+            <h4>3. Listar Agentes Instalados</h4>
+            <code>npx bmad-method list:agents > agents-backup.txt</code>
+            <p>Anote quais agentes você tem instalados</p>
+
+            <h3>🔄 Processo de Migração</h3>
+
+            <h4>Método 1: Atualização In-Place (Recomendado)</h4>
+
+            <p><strong>Passo 1:</strong> Atualizar BMad</p>
+            <code>npx bmad-method update</code>
+
+            <p><strong>Passo 2:</strong> Verificar compatibilidade</p>
+            <code>npx bmad-method status</code>
+
+            <p><strong>Passo 3:</strong> Testar comandos básicos</p>
+            <code>npx bmad-method list:agents</code>
+            <code>npx bmad-method list:config</code>
+
+            <p><strong>Passo 4:</strong> Testar com agente</p>
+            <code>As dev, liste os arquivos do projeto</code>
+            <p><em>Se funcionar, migração bem-sucedida!</em></p>
+
+            <h4>Método 2: Reinstalação Limpa</h4>
+
+            <p>Use se a atualização in-place falhar:</p>
+
+            <p><strong>Passo 1:</strong> Remover instalação antiga</p>
+            <code>rm -rf .bmad-core</code>
+
+            <p><strong>Passo 2:</strong> Reinstalar BMad</p>
+            <code>npx bmad-method install</code>
+
+            <p><strong>Passo 3:</strong> Reinstalar agentes e expansões</p>
+            <p>Use os arquivos de backup para saber quais reinstalar:</p>
+            <code>npx bmad-method add:expansion bmad-infrastructure-devops</code>
+
+            <h3>⚙️ Adaptando Configurações</h3>
+
+            <h4>Verificar Mudanças de Schema</h4>
+
+            <p>Compare o novo <code>bmad-config.json</code> com o backup:</p>
+            <ul>
+                <li>Novos campos adicionados?</li>
+                <li>Campos removidos ou renomeados?</li>
+                <li>Novos valores padrão?</li>
+            </ul>
+
+            <h4>Ajustar Manualmente (se necessário)</h4>
+
+            <p>Edite <code>.bmad-core/bmad-config.json</code> cuidadosamente:</p>
+            <code>
+{
+  "version": "4.50.0",  ← Versão nova
+  "installationType": "full",
+  "ideSetup": ["cursor", "claude-code"],
+  "language": "pt-BR",
+  "newField": "default-value"  ← Campo novo
+}
+            </code>
+
+            <h3>🧪 Testando Após Migração</h3>
+
+            <h4>Teste 1: Comandos Básicos</h4>
+            <code>npx bmad-method status</code>
+            <code>npx bmad-method list:agents</code>
+            <code>npx bmad-method help</code>
+
+            <h4>Teste 2: Agentes Individuais</h4>
+            <code>As dev, liste os arquivos TypeScript do projeto</code>
+            <code>As pm, resuma o README.md</code>
+
+            <h4>Teste 3: Projeto Real</h4>
+            <p>Tente criar um pequeno projeto com o fluxo completo:</p>
+            <code>/bmad-master Crie um componente React de contador</code>
+
+            <h3>🆘 Problemas Comuns e Soluções</h3>
+
+            <h4>Problema: "Agente não encontrado"</h4>
+            <p><strong>Solução:</strong> Reinstale o agente</p>
+            <code>npx bmad-method install</code>
+            <p>Selecione o agente faltante na lista</p>
+
+            <h4>Problema: "Versão incompatível"</h4>
+            <p><strong>Solução:</strong> Reinstalação limpa (Método 2)</p>
+
+            <h4>Problema: "Arquivo de configuração corrompido"</h4>
+            <p><strong>Solução:</strong> Restaurar backup</p>
+            <code>cp .bmad-core.backup/bmad-config.json .bmad-core/</code>
+
+            <h3>📊 Checklist Final</h3>
+
+            <p>✅ Todos os comandos funcionam?</p>
+            <p>✅ Todos os agentes estão disponíveis?</p>
+            <p>✅ Expansões reinstaladas?</p>
+            <p>✅ Projeto de teste funciona?</p>
+            <p>✅ Configurações preservadas?</p>
+
+            <h3>💡 Dicas de Manutenção Contínua</h3>
+
+            <ul>
+                <li>🔄 Atualize regularmente (não deixe acumular versões)</li>
+                <li>💾 Sempre tenha backup antes de atualizar</li>
+                <li>📝 Documente suas expansões instaladas</li>
+                <li>🧪 Mantenha um projeto de teste para validações</li>
+                <li>📚 Leia changelog antes de atualizar</li>
+            </ul>
+
+            <p><strong>Próxima lição:</strong> Solução de problemas comuns no dia a dia!</p>
+        `
+    },
+    {
+        id: 12,
+        title: "Solução de Problemas",
+        content: `
+            <h2>Solucionando Problemas Comuns</h2>
+            <p>Guia prático para resolver os erros mais frequentes do BMad.</p>
+
+            <h3>🔍 Diagnóstico Inicial</h3>
+
+            <p>Sempre comece com estes comandos para diagnosticar:</p>
+
+            <code>npx bmad-method status</code>
+            <p><em>Verifica estado geral da instalação</em></p>
+
+            <code>npx bmad-method list:agents</code>
+            <p><em>Confirma quais agentes estão disponíveis</em></p>
+
+            <code>npx bmad-method list:config</code>
+            <p><em>Verifica arquivos de configuração</em></p>
+
+            <h3>❌ Erro: "Comando não reconhecido"</h3>
+
+            <h4>Sintoma:</h4>
+            <code>npx: command not found: bmad-method</code>
+
+            <h4>Causa:</h4>
+            <p>Node.js ou NPX não instalado ou fora do PATH</p>
+
+            <h4>Solução:</h4>
+            <ol>
+                <li>Verificar Node.js: <code>node --version</code></li>
+                <li>Se não retornar versão, instale Node.js</li>
+                <li>Reinicie o terminal</li>
+                <li>Tente novamente</li>
+            </ol>
+
+            <h3>❌ Erro: "Agente não encontrado"</h3>
+
+            <h4>Sintoma:</h4>
+            <code>Error: Agent 'dev' not found in registry</code>
+
+            <h4>Causa:</h4>
+            <p>Agente não foi instalado ou registro corrompido</p>
+
+            <h4>Solução Rápida:</h4>
+            <code>npx bmad-method install</code>
+            <p>Selecione o agente faltante e instale</p>
+
+            <h4>Solução Completa:</h4>
+            <p>Se reinstalação não funcionar:</p>
+            <ol>
+                <li>Backup: <code>cp -r .bmad-core .bmad-core.backup</code></li>
+                <li>Remover: <code>rm -rf .bmad-core</code></li>
+                <li>Reinstalar: <code>npx bmad-method install</code></li>
+                <li>Configurar novamente</li>
+            </ol>
+
+            <h3>❌ Erro: "Arquivo JSON inválido"</h3>
+
+            <h4>Sintoma:</h4>
+            <code>SyntaxError: Unexpected token in JSON at position 45</code>
+
+            <h4>Causa:</h4>
+            <p>Arquivo <code>bmad-config.json</code> ou <code>bmad-registry.json</code> corrompido</p>
+
+            <h4>Solução:</h4>
+            <ol>
+                <li>Identificar arquivo com problema (veja mensagem de erro)</li>
+                <li>Abrir arquivo em editor</li>
+                <li>Validar JSON online: https://jsonlint.com/</li>
+                <li>Corrigir vírgulas, chaves, aspas faltando</li>
+                <li>Salvar e testar</li>
+            </ol>
+
+            <h4>Se não conseguir corrigir:</h4>
+            <p>Restaure backup ou reinstale:</p>
+            <code>npx bmad-method install</code>
+
+            <h3>❌ Erro: "Versão incompatível"</h3>
+
+            <h4>Sintoma:</h4>
+            <code>Warning: BMad version mismatch. Expected 4.50.0, found 4.44.1</code>
+
+            <h4>Causa:</h4>
+            <p>Versão do BMad desatualizada</p>
+
+            <h4>Solução:</h4>
+            <code>npx bmad-method update</code>
+            <p>Se falhar, veja Lição 11 sobre migração</p>
+
+            <h3>❌ Erro: "Permissão negada"</h3>
+
+            <h4>Sintoma:</h4>
+            <code>EACCES: permission denied, mkdir '.bmad-core'</code>
+
+            <h4>Causa:</h4>
+            <p>Sem permissão para criar arquivos no diretório</p>
+
+            <h4>Solução:</h4>
+            <ol>
+                <li>Verifique permissões do diretório</li>
+                <li>No Linux/Mac: <code>chmod 755 .</code></li>
+                <li>No Windows: Execute terminal como Administrador</li>
+                <li>Ou mude para diretório com permissões corretas</li>
+            </ol>
+
+            <h3>❌ Erro: "API Key inválida"</h3>
+
+            <h4>Sintoma:</h4>
+            <code>Error: Invalid API key for Claude/Gemini</code>
+
+            <h4>Causa:</h4>
+            <p>Chave de API não configurada ou expirada</p>
+
+            <h4>Solução:</h4>
+            <ol>
+                <li>Verificar arquivo de configuração da IDE</li>
+                <li>Obter nova API key no site do provedor</li>
+                <li>Atualizar configuração</li>
+                <li>Reiniciar IDE</li>
+            </ol>
+
+            <h3>❌ Agente não responde</h3>
+
+            <h4>Sintoma:</h4>
+            <p>Comando enviado mas agente não executa nada</p>
+
+            <h4>Causas Possíveis:</h4>
+            <ul>
+                <li>Sintaxe incorreta do comando</li>
+                <li>IDE não configurada corretamente</li>
+                <li>Agente não suporta a tarefa solicitada</li>
+            </ul>
+
+            <h4>Solução:</h4>
+            <ol>
+                <li>Verifique sintaxe: <code>As dev, [tarefa]</code></li>
+                <li>Use agente correto para a tarefa</li>
+                <li>Reinicie a IDE</li>
+                <li>Tente tarefa mais simples para testar</li>
+            </ol>
+
+            <h3>🛠️ Ferramentas de Diagnóstico</h3>
+
+            <h4>Ver Logs Detalhados</h4>
+            <code>npx bmad-method status --verbose</code>
+
+            <h4>Validar Configuração</h4>
+            <code>npx bmad-method show:config</code>
+
+            <h4>Testar Conectividade</h4>
+            <p>Teste um agente com tarefa simples:</p>
+            <code>As dev, liste os arquivos da pasta atual</code>
+
+            <h3>💡 Dicas de Prevenção</h3>
+
+            <ul>
+                <li>✅ Mantenha backups regulares de <code>.bmad-core/</code></li>
+                <li>✅ Use Git para versionar configurações</li>
+                <li>✅ Teste em projeto separado antes de produção</li>
+                <li>✅ Documente suas configurações personalizadas</li>
+                <li>✅ Leia changelog antes de atualizar</li>
+                <li>✅ Não edite arquivos JSON manualmente</li>
+            </ul>
+
+            <h3>🆘 Quando Pedir Ajuda</h3>
+
+            <p>Se nenhuma solução funcionou:</p>
+            <ol>
+                <li>Reúna informações:
+                    <ul>
+                        <li>Saída de <code>npx bmad-method status</code></li>
+                        <li>Mensagem de erro completa</li>
+                        <li>Versão do Node.js</li>
+                        <li>Sistema operacional</li>
+                    </ul>
+                </li>
+                <li>Abra issue no GitHub: https://github.com/inematds/BMAD-Academy/issues</li>
+                <li>Ou pergunte no chatbot desta academy!</li>
+            </ol>
+
+            <p><strong>Próxima lição:</strong> Boas práticas para maximizar produtividade!</p>
+        `
+    },
+    {
+        id: 13,
+        title: "Boas Práticas",
+        content: `
+            <h2>Boas Práticas e Otimização</h2>
+            <p>Maximize sua produtividade com BMad seguindo estas práticas recomendadas.</p>
+
+            <h3>📋 Organização de Projetos</h3>
+
+            <h4>Estrutura de Diretórios Recomendada</h4>
+            <code>
+meu-projeto/
+├── .bmad-core/              ← Configurações BMad
+├── docs/                    ← Documentação gerada
+│   ├── prd.md              ← PRD do PM
+│   ├── architecture.md     ← Arquitetura do Architect
+│   └── wireframes/         ← Designs do UX-Expert
+├── src/                     ← Código do Dev
+├── tests/                   ← Testes do QA
+└── README.md
+            </code>
+
+            <h4>Convenções de Nomenclatura</h4>
+            <ul>
+                <li><code>docs/</code> - Documentação gerada pelos agentes</li>
+                <li><code>src/</code> - Código-fonte implementado</li>
+                <li><code>tests/</code> - Testes e validações</li>
+                <li><code>.bmad-core/</code> - NUNCA editar manualmente</li>
+            </ul>
+
+            <h3>🎯 Escolhendo o Agente Certo</h3>
+
+            <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
+                <thead>
+                    <tr style="background: var(--bg-card); border-bottom: 2px solid var(--border);">
+                        <th style="padding: 12px; text-align: left;">Tarefa</th>
+                        <th style="padding: 12px; text-align: left;">Agente Ideal</th>
+                        <th style="padding: 12px; text-align: left;">Agente Alternativo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr style="border-bottom: 1px solid var(--border);">
+                        <td style="padding: 12px;">Planejar produto</td>
+                        <td style="padding: 12px;"><strong>pm</strong></td>
+                        <td style="padding: 12px;">analyst</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid var(--border); background: var(--bg-card);">
+                        <td style="padding: 12px;">Escrever código</td>
+                        <td style="padding: 12px;"><strong>dev</strong></td>
+                        <td style="padding: 12px;">-</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid var(--border);">
+                        <td style="padding: 12px;">Criar interface</td>
+                        <td style="padding: 12px;"><strong>ux-expert</strong></td>
+                        <td style="padding: 12px;">dev</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid var(--border); background: var(--bg-card);">
+                        <td style="padding: 12px;">Definir arquitetura</td>
+                        <td style="padding: 12px;"><strong>architect</strong></td>
+                        <td style="padding: 12px;">dev</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid var(--border);">
+                        <td style="padding: 12px;">Pesquisar mercado</td>
+                        <td style="padding: 12px;"><strong>analyst</strong></td>
+                        <td style="padding: 12px;">pm</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid var(--border); background: var(--bg-card);">
+                        <td style="padding: 12px;">Criar testes</td>
+                        <td style="padding: 12px;"><strong>qa</strong></td>
+                        <td style="padding: 12px;">dev</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>⚡ Otimizando Comandos</h3>
+
+            <h4>❌ Comandos Vagos (Evite)</h4>
+            <code>As dev, crie um site</code>
+            <p><em>Muito vago, pode gerar resultado inesperado</em></p>
+
+            <h4>✅ Comandos Específicos (Use)</h4>
+            <code>As dev, crie uma landing page HTML com header, hero section e footer responsivo usando Tailwind CSS</code>
+            <p><em>Específico, claro, com tecnologias definidas</em></p>
+
+            <h4>💡 Template de Comando Eficaz</h4>
+            <code>As [agente], [ação] [o quê] [como] [com quais tecnologias/restrições]</code>
+
+            <p><strong>Exemplos:</strong></p>
+            <code>As dev, implemente um formulário de login com validação de email e senha usando React e Formik</code>
+            <code>As ux-expert, crie wireframes de baixa fidelidade para um dashboard de vendas com gráficos e tabelas</code>
+            <code>As pm, crie um PRD para app mobile de delivery incluindo user stories e critérios de aceitação</code>
+
+            <h3>🔄 Fluxo de Trabalho Ideal</h3>
+
+            <h4>Para Projetos Novos:</h4>
+            <ol>
+                <li><strong>Analyst</strong>: Pesquisa e análise de requisitos</li>
+                <li><strong>PM</strong>: Criação do PRD</li>
+                <li><strong>Architect</strong>: Design da arquitetura</li>
+                <li><strong>UX-Expert</strong>: Wireframes e design</li>
+                <li><strong>Dev</strong>: Implementação</li>
+                <li><strong>QA</strong>: Testes e validação</li>
+                <li><strong>Dev</strong>: Correções baseadas no QA</li>
+            </ol>
+
+            <h4>Para Features Existentes:</h4>
+            <ol>
+                <li><strong>PM</strong>: Especificação da feature</li>
+                <li><strong>Architect</strong>: Design técnico (se complexo)</li>
+                <li><strong>Dev</strong>: Implementação</li>
+                <li><strong>QA</strong>: Testes</li>
+            </ol>
+
+            <h4>Para Bugs:</h4>
+            <ol>
+                <li><strong>QA</strong>: Reproduzir e documentar bug</li>
+                <li><strong>Dev</strong>: Corrigir problema</li>
+                <li><strong>QA</strong>: Validar correção</li>
+            </ol>
+
+            <h3>💾 Versionamento e Backup</h3>
+
+            <h4>O que versionar no Git:</h4>
+            <ul>
+                <li>✅ Código-fonte (<code>src/</code>)</li>
+                <li>✅ Testes (<code>tests/</code>)</li>
+                <li>✅ Documentação (<code>docs/</code>)</li>
+                <li>✅ Configurações de projeto</li>
+            </ul>
+
+            <h4>O que NÃO versionar:</h4>
+            <ul>
+                <li>❌ <code>.bmad-core/</code> (opcional, depende do time)</li>
+                <li>❌ <code>node_modules/</code></li>
+                <li>❌ Arquivos temporários</li>
+                <li>❌ API keys e secrets</li>
+            </ul>
+
+            <h4>Exemplo .gitignore:</h4>
+            <code>
+# Dependencies
+node_modules/
+
+# BMad (opcional)
+.bmad-core/
+
+# Secrets
+.env
+*.key
+
+# Temporários
+*.log
+.DS_Store
+            </code>
+
+            <h3>📊 Medindo Produtividade</h3>
+
+            <h4>Métricas para Acompanhar:</h4>
+            <ul>
+                <li>⏱️ <strong>Tempo de projeto:</strong> Manual vs Semi-automático vs Automático</li>
+                <li>🎯 <strong>Taxa de sucesso:</strong> % de comandos que geram resultado útil</li>
+                <li>🔄 <strong>Iterações:</strong> Quantas vezes precisa refinar comando</li>
+                <li>✅ <strong>Qualidade:</strong> Quantos bugs encontrados depois</li>
+            </ul>
+
+            <h4>Meta de Eficiência:</h4>
+            <p>Com prática, você deve atingir:</p>
+            <ul>
+                <li>80% dos comandos geram resultado útil na primeira tentativa</li>
+                <li>Projetos simples em modo semi-automático: < 30 minutos</li>
+                <li>Projetos médios: 1-2 horas (vs 1-2 dias manual)</li>
+            </ul>
+
+            <h3>🎓 Aprendizado Contínuo</h3>
+
+            <h4>Técnicas de Melhoria:</h4>
+            <ul>
+                <li>📝 Documente comandos que funcionaram bem</li>
+                <li>🔄 Crie templates de comandos para tarefas recorrentes</li>
+                <li>🧪 Experimente diferentes agentes para mesma tarefa</li>
+                <li>📊 Compare resultados de modos diferentes</li>
+                <li>🤝 Compartilhe aprendizados com a comunidade</li>
+            </ul>
+
+            <h3>⚠️ Erros Comuns a Evitar</h3>
+
+            <ul>
+                <li>❌ Usar modo automático sem conhecer os agentes</li>
+                <li>❌ Pular etapas importantes (arquitetura, testes)</li>
+                <li>❌ Comandos vagos esperando resultado perfeito</li>
+                <li>❌ Não revisar código gerado</li>
+                <li>❌ Editar <code>.bmad-core/</code> manualmente</li>
+                <li>❌ Não fazer backup antes de atualizar</li>
+            </ul>
+
+            <p><strong>Próxima lição:</strong> Projetos avançados e desafios práticos!</p>
+        `
+    },
+    {
+        id: 14,
+        title: "Projetos Avançados",
+        content: `
+            <h2>Projetos Avançados e Desafios</h2>
+            <p>Coloque em prática tudo que aprendeu com projetos reais e complexos!</p>
+
+            <h3>🎯 Projeto 1: E-commerce Completo</h3>
+
+            <h4>Objetivo:</h4>
+            <p>Criar uma plataforma de e-commerce funcional do zero</p>
+
+            <h4>Requisitos:</h4>
+            <ul>
+                <li>Catálogo de produtos com busca e filtros</li>
+                <li>Carrinho de compras</li>
+                <li>Sistema de checkout</li>
+                <li>Painel administrativo</li>
+                <li>Integração com pagamento (simulado)</li>
+            </ul>
+
+            <h4>Fluxo Sugerido:</h4>
+            <code>As analyst, pesquise as melhores práticas de e-commerce e principais features</code>
+            <code>As pm, crie PRD completo para e-commerce baseado na pesquisa</code>
+            <code>As architect, defina arquitetura full-stack (frontend, backend, database)</code>
+            <code>As ux-expert, crie wireframes de todas as telas principais</code>
+            <code>As dev, implemente o frontend com React e backend com Node.js</code>
+            <code>As qa, crie suite de testes E2E e unitários</code>
+
+            <h4>Tecnologias Sugeridas:</h4>
+            <ul>
+                <li>Frontend: React + TypeScript + Tailwind CSS</li>
+                <li>Backend: Node.js + Express + PostgreSQL</li>
+                <li>Pagamento: Stripe (test mode)</li>
+                <li>Deploy: Vercel + Railway</li>
+            </ul>
+
+            <h4>Tempo Estimado:</h4>
+            <p>Manual: 2-3 semanas | Semi-automático: 3-5 dias | Automático: 1-2 dias</p>
+
+            <h3>🎯 Projeto 2: Sistema de Gestão Médica (SaaS)</h3>
+
+            <h4>Objetivo:</h4>
+            <p>Plataforma multi-tenant para consultórios médicos</p>
+
+            <h4>Requisitos:</h4>
+            <ul>
+                <li>Cadastro de pacientes e médicos</li>
+                <li>Agendamento de consultas</li>
+                <li>Prontuário eletrônico</li>
+                <li>Sistema de notificações (email/SMS)</li>
+                <li>Relatórios e dashboards</li>
+                <li>Multi-tenancy (um sistema, vários consultórios)</li>
+            </ul>
+
+            <h4>Modo Recomendado:</h4>
+            <p>Semi-automático com revisões em cada etapa</p>
+
+            <code>/bmad-master Crie sistema de gestão médica SaaS com prontuário, agendamento e multi-tenancy</code>
+            <p><em>Revise e aprove cada etapa antes de continuar</em></p>
+
+            <h4>Desafios Técnicos:</h4>
+            <ul>
+                <li>Segurança (LGPD/HIPAA compliance)</li>
+                <li>Performance com muitos usuários simultâneos</li>
+                <li>Isolamento de dados entre tenants</li>
+                <li>Backup automático de prontuários</li>
+            </ul>
+
+            <h4>Tempo Estimado:</h4>
+            <p>Semi-automático: 1-2 semanas | Automático: 3-5 dias</p>
+
+            <h3>🎯 Projeto 3: Plataforma de Cursos Online</h3>
+
+            <h4>Objetivo:</h4>
+            <p>Sistema completo de ensino à distância (tipo Udemy)</p>
+
+            <h4>Requisitos:</h4>
+            <ul>
+                <li>Criação e gestão de cursos</li>
+                <li>Player de vídeo com progresso</li>
+                <li>Quizzes e exercícios</li>
+                <li>Certificados de conclusão</li>
+                <li>Sistema de pagamento</li>
+                <li>Área do instrutor e do aluno</li>
+            </ul>
+
+            <h4>Fluxo Completo:</h4>
+            <code>As analyst, analise principais plataformas de curso e liste features essenciais</code>
+            <code>As pm, crie PRD com user stories para alunos e instrutores</code>
+            <code>As architect, defina arquitetura escalável com CDN para vídeos</code>
+            <code>As ux-expert, crie protótipo navegável das jornadas principais</code>
+            <code>/bmad-master Implemente a plataforma seguindo PRD e arquitetura</code>
+            <code>As qa, crie testes para jornadas críticas (compra, assistir aula, certificado)</code>
+
+            <h4>Tempo Estimado:</h4>
+            <p>Semi-automático: 2-3 semanas</p>
+
+            <h3>🎯 Projeto 4: App Mobile de Produtividade</h3>
+
+            <h4>Objetivo:</h4>
+            <p>Aplicativo de gestão de tarefas e produtividade (tipo Todoist)</p>
+
+            <h4>Requisitos:</h4>
+            <ul>
+                <li>Criação e organização de tarefas</li>
+                <li>Projetos e sub-tarefas</li>
+                <li>Prioridades e datas</li>
+                <li>Notificações push</li>
+                <li>Sincronização entre dispositivos</li>
+                <li>Modo offline</li>
+            </ul>
+
+            <h4>Expansão Necessária:</h4>
+            <code>npx bmad-method add:expansion bmad-mobile-dev</code>
+
+            <h4>Tecnologias:</h4>
+            <ul>
+                <li>React Native + TypeScript</li>
+                <li>Firebase (auth, database, notifications)</li>
+                <li>Redux para state management</li>
+                <li>Expo para desenvolvimento rápido</li>
+            </ul>
+
+            <h4>Tempo Estimado:</h4>
+            <p>Semi-automático: 1-2 semanas</p>
+
+            <h3>🎯 Projeto 5: Jogo 2D com Phaser</h3>
+
+            <h4>Objetivo:</h4>
+            <p>Jogo 2D estilo plataforma com níveis e power-ups</p>
+
+            <h4>Expansão Necessária:</h4>
+            <code>npx bmad-method add:expansion bmad-2d-phaser-game-dev</code>
+
+            <h4>Requisitos:</h4>
+            <ul>
+                <li>Movimento de personagem (pular, correr)</li>
+                <li>3 níveis com dificuldade crescente</li>
+                <li>Inimigos com IA básica</li>
+                <li>Sistema de pontuação</li>
+                <li>Power-ups e coletáveis</li>
+                <li>Menu e tela de game over</li>
+            </ul>
+
+            <h4>Comando Sugerido:</h4>
+            <code>/bmad-master Crie jogo de plataforma 2D com Phaser.js, 3 níveis, inimigos e power-ups</code>
+
+            <h4>Tempo Estimado:</h4>
+            <p>Automático: 2-3 dias</p>
+
+            <h3>🏆 Desafios Extras</h3>
+
+            <h4>🔥 Desafio Speed Run</h4>
+            <p>Crie um CRUD completo em menos de 30 minutos usando modo automático:</p>
+            <code>/bmad-master auto Crie CRUD de produtos com React, Node.js e PostgreSQL</code>
+
+            <h4>🔥 Desafio Quality</h4>
+            <p>Crie projeto com 100% de cobertura de testes:</p>
+            <code>As qa, garanta que todos os componentes e endpoints tenham testes unitários e de integração</code>
+
+            <h4>🔥 Desafio Microservices</h4>
+            <p>Arquitetura de microserviços com 3+ serviços:</p>
+            <code>npx bmad-method add:expansion bmad-infrastructure-devops</code>
+            <code>As architect, crie arquitetura de microserviços com API Gateway, Auth Service, Product Service e Order Service</code>
+
+            <h3>📊 Critérios de Avaliação</h3>
+
+            <p>Para cada projeto, avalie:</p>
+            <ul>
+                <li>✅ Funcionalidades implementadas vs requisitos</li>
+                <li>✅ Qualidade do código (linting, patterns)</li>
+                <li>✅ Cobertura de testes</li>
+                <li>✅ Documentação gerada</li>
+                <li>✅ Performance e otimização</li>
+                <li>✅ UX e design</li>
+            </ul>
+
+            <h3>💡 Dicas para Projetos Avançados</h3>
+
+            <ul>
+                <li>📝 Sempre comece com PRD detalhado</li>
+                <li>🏗️ Não pule arquitetura em projetos complexos</li>
+                <li>🧪 Teste continuamente, não só no final</li>
+                <li>📦 Use expansões para projetos especializados</li>
+                <li>🔄 Itere: Versão 1 simples, depois melhorias</li>
+                <li>💾 Versione tudo no Git</li>
+            </ul>
+
+            <p><strong>Parabéns!</strong> Você está pronto para projetos profissionais complexos! 🎉</p>
+        `
+    },
+    {
+        id: 15,
+        title: "Próximos Passos",
+        content: `
+            <h2>Próximos Passos e Comunidade</h2>
+            <p>Você completou o curso! Veja o que fazer agora e como continuar evoluindo.</p>
+
+            <h3>🎓 O Que Você Aprendeu</h3>
+
+            <p>Parabéns! Você agora domina:</p>
+
+            <ul>
+                <li>✅ Fundamentos do BMad Method</li>
+                <li>✅ Instalação e configuração completa</li>
+                <li>✅ Todos os agentes e suas especialidades</li>
+                <li>✅ Comandos básicos e avançados</li>
+                <li>✅ Arquivos de configuração</li>
+                <li>✅ Criação de projetos (manual, semi-automático, automático)</li>
+                <li>✅ Atualização e migração</li>
+                <li>✅ Solução de problemas comuns</li>
+                <li>✅ Boas práticas de produtividade</li>
+                <li>✅ Projetos avançados e complexos</li>
+            </ul>
+
+            <h3>🎯 Próximos Passos Práticos</h3>
+
+            <h4>1. Crie Seu Primeiro Projeto Real</h4>
+            <p>Escolha um problema real da sua profissão e crie uma solução:</p>
+            <ul>
+                <li>Advogados: Sistema de gestão de processos</li>
+                <li>Médicos: Prontuário eletrônico</li>
+                <li>Professores: Plataforma de exercícios</li>
+                <li>Empreendedores: MVP do seu produto</li>
+            </ul>
+
+            <h4>2. Explore Expansões Especializadas</h4>
+            <code>npx bmad-method list:expansions</code>
+            <p>Instale expansões relevantes para sua área:</p>
+            <ul>
+                <li>Game Dev → <code>bmad-2d-phaser-game-dev</code></li>
+                <li>DevOps → <code>bmad-infrastructure-devops</code></li>
+                <li>Mobile → <code>bmad-mobile-dev</code></li>
+                <li>Escrita → <code>bmad-creative-writing</code></li>
+            </ul>
+
+            <h4>3. Contribua com a Comunidade</h4>
+            <p>Compartilhe seus projetos e aprendizados:</p>
+            <ul>
+                <li>GitHub: Faça fork de projetos BMad</li>
+                <li>Issues: Reporte bugs e sugira melhorias</li>
+                <li>Discussions: Tire dúvidas e ajude outros</li>
+                <li>Pull Requests: Contribua com código</li>
+            </ul>
+
+            <h3>🔗 Links Importantes</h3>
+
+            <h4>Repositórios Oficiais:</h4>
+            <ul>
+                <li>🏫 <strong>INEMA BMad Academy:</strong><br>
+                    <code>https://github.com/inematds/BMAD-Academy</code><br>
+                    <em>Este projeto (academy)</em>
+                </li>
+                <li>🚀 <strong>BMad Method (oficial):</strong><br>
+                    <code>https://github.com/bmad-method/bmad-method</code><br>
+                    <em>Framework principal</em>
+                </li>
+            </ul>
+
+            <h4>Documentação:</h4>
+            <ul>
+                <li>📚 Docs oficiais do BMad</li>
+                <li>📖 Exemplos e templates</li>
+                <li>🎥 Vídeos tutoriais (em breve)</li>
+            </ul>
+
+            <h3>💬 Comunidade e Suporte</h3>
+
+            <h4>Onde Pedir Ajuda:</h4>
+            <ul>
+                <li>💬 <strong>Chatbot desta Academy</strong> - Perguntas rápidas</li>
+                <li>🐛 <strong>GitHub Issues</strong> - Bugs e problemas técnicos</li>
+                <li>💡 <strong>GitHub Discussions</strong> - Ideias e dúvidas gerais</li>
+                <li>📧 <strong>Email:</strong> inematds@gmail.com</li>
+            </ul>
+
+            <h4>Como Contribuir:</h4>
+
+            <p><strong>1. Melhorias nesta Academy:</strong></p>
+            <ol>
+                <li>Fork: <code>https://github.com/inematds/BMAD-Academy</code></li>
+                <li>Crie branch: <code>git checkout -b feature/minha-melhoria</code></li>
+                <li>Faça mudanças</li>
+                <li>Commit: <code>git commit -m "feat: adiciona nova lição"</code></li>
+                <li>Push: <code>git push origin feature/minha-melhoria</code></li>
+                <li>Abra Pull Request</li>
+            </ol>
+
+            <p><strong>2. Sugestões de Contribuição:</strong></p>
+            <ul>
+                <li>📝 Novas lições ou conteúdo</li>
+                <li>🎮 Mais desafios no Playground</li>
+                <li>🌐 Tradução para outros idiomas</li>
+                <li>🐛 Correção de bugs</li>
+                <li>🎨 Melhorias de design</li>
+                <li>📚 Exemplos de projetos</li>
+            </ul>
+
+            <h3>🎨 Personalize Sua Experiência</h3>
+
+            <h4>Crie Seus Próprios Agentes:</h4>
+            <p>Agentes customizados para necessidades específicas da sua profissão</p>
+
+            <h4>Templates de Comandos:</h4>
+            <p>Crie biblioteca de comandos que funcionam bem para você</p>
+
+            <h4>Workflows Personalizados:</h4>
+            <p>Adapte fluxos de trabalho para sua rotina</p>
+
+            <h3>📈 Continue Evoluindo</h3>
+
+            <h4>Metas de Curto Prazo (1-2 semanas):</h4>
+            <ul>
+                <li>✅ Completar 1 projeto pequeno</li>
+                <li>✅ Experimentar modo semi-automático</li>
+                <li>✅ Instalar 1 expansão</li>
+            </ul>
+
+            <h4>Metas de Médio Prazo (1-2 meses):</h4>
+            <ul>
+                <li>✅ Completar 3 projetos médios</li>
+                <li>✅ Dominar modo automático</li>
+                <li>✅ Contribuir com 1 issue/PR</li>
+            </ul>
+
+            <h4>Metas de Longo Prazo (3-6 meses):</h4>
+            <ul>
+                <li>✅ Completar 1 projeto profissional complexo</li>
+                <li>✅ Criar agentes customizados</li>
+                <li>✅ Ajudar outros na comunidade</li>
+            </ul>
+
+            <h3>🏆 Certificado de Conclusão</h3>
+
+            <p>Você completou todas as 15 lições da <strong>INEMA BMad Academy</strong>!</p>
+
+            <p>Parabéns por dominar o BMad Method. Você agora pode:</p>
+            <ul>
+                <li>🚀 Criar projetos complexos sem ser programador</li>
+                <li>⚡ Automatizar tarefas com agentes de IA</li>
+                <li>🎯 Resolver problemas reais da sua profissão</li>
+                <li>🤝 Contribuir com a comunidade BMad</li>
+            </ul>
+
+            <p><strong>Compartilhe sua conquista:</strong></p>
+            <p>#BMadMethod #INEMABMadAcademy #IAGenerativa #AutomacaoInteligente</p>
+
+            <h3>💡 Mensagem Final</h3>
+
+            <p>O BMad Method é uma ferramenta poderosa que democratiza a criação de soluções tecnológicas. Você não precisa ser programador para criar sistemas incríveis - você só precisa ter boas ideias e saber comunicá-las aos agentes.</p>
+
+            <p><strong>Lembre-se:</strong></p>
+            <ul>
+                <li>🎯 Comece pequeno, pense grande</li>
+                <li>🔄 Pratique regularmente</li>
+                <li>📚 Continue aprendendo</li>
+                <li>🤝 Ajude outros a aprender</li>
+                <li>🚀 Transforme suas ideias em realidade</li>
+            </ul>
+
+            <p style="text-align: center; font-size: 1.5rem; margin: 40px 0;">
+                <strong>Boa sorte na sua jornada com BMad! 🎉</strong>
+            </p>
+
+            <p style="text-align: center;">
+                <em>Desenvolvido com 🤖 por INEMA usando BMad Method e Claude Code</em>
+            </p>
+
+            <hr style="margin: 40px 0; border-color: var(--border);">
+
+            <p style="text-align: center;">
+                <strong>Gostou da academy? Dê uma ⭐ no GitHub!</strong><br>
+                <code>https://github.com/inematds/BMAD-Academy</code>
+            </p>
+        `
     }
 ];
