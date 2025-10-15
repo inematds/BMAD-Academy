@@ -81,33 +81,63 @@
 
             <!-- Playground Section -->
             <section id="playground" class="section">
-                <div class="playground-container">
-                    <h2>Playground Interativo</h2>
-                    <p class="playground-intro">Experimente comandos do BMad aqui!</p>
+                <div class="playground-full-container">
+                    <h2 style="text-align: center; margin-bottom: 10px;">🎮 Playground Interativo</h2>
+                    <p style="text-align: center; margin-bottom: 20px; color: var(--text-muted);">13 módulos práticos • 56+ tópicos • Desafios interativos</p>
 
-                    <div class="playground-content">
-                        <div class="terminal">
-                            <div class="terminal-header">
-                                <span class="terminal-title">Terminal BMad</span>
+                    <div class="playground-layout">
+                        <!-- Sidebar de Módulos -->
+                        <div class="playground-sidebar">
+                            <h3>📚 Módulos</h3>
+                            <div class="module-filter">
+                                <button class="filter-btn active" onclick="filterModules('all')">Todos (13)</button>
+                                <button class="filter-btn" onclick="filterModules('basico')">Básico (2)</button>
+                                <button class="filter-btn" onclick="filterModules('intermediario')">Inter (3)</button>
+                                <button class="filter-btn" onclick="filterModules('avancado')">Avanç (3)</button>
+                                <button class="filter-btn" onclick="filterModules('profissional')">Pro (5)</button>
                             </div>
-                            <div id="terminal-output" class="terminal-output">
-                                <div class="terminal-line">$ Bem-vindo ao playground do BMad!</div>
-                                <div class="terminal-line">$ Digite um comando ou selecione um exemplo abaixo.</div>
-                            </div>
-                            <div class="terminal-input-container">
-                                <span class="terminal-prompt">$</span>
-                                <input type="text" id="terminal-input" class="terminal-input" placeholder="Digite um comando...">
-                            </div>
+                            <div id="module-list" class="module-list"></div>
                         </div>
 
-                        <div class="examples">
-                            <h3>Exemplos Rápidos</h3>
-                            <button class="example-btn" onclick="runExample('status')">npx bmad-method status</button>
-                            <button class="example-btn" onclick="runExample('list')">npx bmad-method list:agents</button>
-                            <button class="example-btn" onclick="runExample('help')">npx bmad-method help</button>
-                            <button class="example-btn" onclick="runExample('config')">npx bmad-method list:config</button>
-                            <button class="example-btn" onclick="runExample('expansions')">npx bmad-method list:expansions</button>
-                            <button class="example-btn" onclick="runExample('update-check')">npx bmad-method update-check</button>
+                        <!-- Área Principal -->
+                        <div class="playground-main">
+                            <!-- Terminal -->
+                            <div class="terminal">
+                                <div class="terminal-header">
+                                    <span class="terminal-title">💻 Terminal BMad</span>
+                                    <button class="terminal-clear" onclick="clearTerminal()">🗑️ Limpar</button>
+                                </div>
+                                <div id="terminal-output" class="terminal-output">
+                                    <div class="terminal-line success">$ Bem-vindo ao Playground Expandido da INEMA BMad Academy!</div>
+                                    <div class="terminal-line info">$ Explore 13 módulos, complete desafios e domine o BMad Method.</div>
+                                    <div class="terminal-line">$ Selecione um módulo à esquerda para começar.</div>
+                                </div>
+                                <div class="terminal-input-container">
+                                    <span class="terminal-prompt">$</span>
+                                    <input type="text" id="terminal-input" class="terminal-input" placeholder="Digite um comando...">
+                                </div>
+                            </div>
+
+                            <!-- Módulo Ativo -->
+                            <div id="module-content" class="module-content">
+                                <div class="module-placeholder">
+                                    <h3>👈 Selecione um módulo</h3>
+                                    <p>Escolha um módulo na lista à esquerda para ver os tópicos e desafios.</p>
+                                </div>
+                            </div>
+
+                            <!-- Exemplos Rápidos -->
+                            <div class="examples-compact">
+                                <h4>⚡ Exemplos Rápidos</h4>
+                                <div class="example-grid">
+                                    <button class="example-btn-compact" onclick="runExample('status')">status</button>
+                                    <button class="example-btn-compact" onclick="runExample('list')">list:agents</button>
+                                    <button class="example-btn-compact" onclick="runExample('help')">help</button>
+                                    <button class="example-btn-compact" onclick="runExample('config')">list:config</button>
+                                    <button class="example-btn-compact" onclick="runExample('expansions')">list:expansions</button>
+                                    <button class="example-btn-compact" onclick="runExample('update-check')">update-check</button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -158,6 +188,7 @@
 
     <script src="js/knowledge.js"></script>
     <script src="js/lessons.js"></script>
+    <script src="js/modules.js"></script>
     <script src="js/app.js"></script>
     <script src="js/chat.js"></script>
 </body>

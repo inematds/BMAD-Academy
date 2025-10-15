@@ -4,82 +4,288 @@ const lessons = [
         id: 1,
         title: "O que é o BMad?",
         content: `
-            <h2>O que é o BMad Method?</h2>
-            <p>BMad Method é um framework universal de agentes de IA que permite qualquer pessoa criar soluções complexas sem precisar ser programador.</p>
+            <h2>BMad: Crie Soluções com IA em 3 Passos</h2>
 
-            <h3>Conceitos Principais:</h3>
+            <h3>O que é?</h3>
+            <p>BMad é um sistema que conecta você a <strong>especialistas de IA</strong>. Você fala o que quer, eles fazem.</p>
+
+            <h3>Como funciona na prática?</h3>
+
+            <p><strong>1. Você instala o BMad</strong> (via terminal)</p>
+            <code>npx bmad-method install</code>
+
+            <p><strong>2. Você pede o que precisa</strong> (via IDE como Claude Code, Cursor)</p>
+            <code>As dev, crie um formulário de contato</code>
+
+            <p><strong>3. O agente cria para você</strong> (código, design, documentação)</p>
+            <p>✅ Em segundos você tem o resultado pronto.</p>
+
+            <h3>Quem são os Agentes?</h3>
+            <p>São especialistas virtuais. Cada um faz uma coisa:</p>
             <ul>
-                <li><strong>Agentes:</strong> Especialistas virtuais que executam tarefas (desenvolvedor, designer, gerente, etc.)</li>
-                <li><strong>Comandos:</strong> Instruções simples que você dá aos agentes</li>
-                <li><strong>Projetos:</strong> Soluções completas criadas pela combinação de agentes</li>
+                <li><strong>dev</strong> → Escreve código</li>
+                <li><strong>pm</strong> → Planeja o projeto</li>
+                <li><strong>ux-expert</strong> → Desenha interfaces</li>
+                <li><strong>architect</strong> → Define arquitetura técnica</li>
+                <li><strong>qa</strong> → Cria testes</li>
             </ul>
 
-            <h3>Por que usar BMad?</h3>
-            <p>Imagine ter uma equipe completa de especialistas trabalhando para você instantaneamente:</p>
+            <h3>O que você pode criar?</h3>
+            <p><strong>Qualquer sistema digital:</strong></p>
             <ul>
-                <li>Desenvolvedores para criar código</li>
-                <li>Designers para criar interfaces</li>
-                <li>Gerentes de projeto para organizar tudo</li>
-                <li>E muito mais!</li>
+                <li>📝 Advogados: Gestão de processos</li>
+                <li>🏥 Médicos: Prontuário eletrônico</li>
+                <li>🎓 Professores: Plataforma de ensino</li>
+                <li>💼 Empresas: CRM, Dashboard, Automações</li>
             </ul>
 
-            <p><strong>Tudo isso através de comandos simples no terminal.</strong></p>
+            <h3>O diferencial?</h3>
+            <p><strong>Você não precisa saber programar.</strong></p>
+            <p>Você descreve o que quer em português, os agentes executam.</p>
+
+            <p><strong>Próxima lição:</strong> Vamos instalar e testar!</p>
         `
     },
     {
         id: 2,
         title: "Instalando o BMad",
         content: `
-            <h2>Como Instalar o BMad</h2>
-            <p>A instalação do BMad é muito simples e requer apenas o Node.js instalado.</p>
+            <h2>Instalação: 3 Passos Rápidos</h2>
 
-            <h3>Passo 1: Verificar Node.js</h3>
-            <p>Abra seu terminal e digite:</p>
+            <h3>Pré-requisito: Node.js</h3>
+            <p><strong>Verifique se tem Node.js instalado:</strong></p>
             <code>node --version</code>
-            <p>Se aparecer uma versão (ex: v18.0.0), você já tem Node.js instalado.</p>
+            <p>Se aparecer algo como <code>v18.0.0</code> ou superior, pode continuar.<br>
+            Se não, baixe em: <strong>nodejs.org</strong></p>
 
-            <h3>Passo 2: Executar o BMad</h3>
-            <p>Digite no terminal:</p>
-            <code>npx bmad-method status</code>
-            <p>Este comando verifica se o BMad está instalado e mostra a versão.</p>
-
-            <h3>Passo 3: Instalar no seu projeto</h3>
-            <p>Navegue até a pasta do seu projeto e execute:</p>
+            <h3>Passo 1: Instalar o BMad</h3>
             <code>npx bmad-method install</code>
-            <p>Siga as instruções na tela para selecionar os agentes que deseja instalar.</p>
+            <p>✅ O instalador é interativo. Ele pergunta:</p>
+            <ul>
+                <li>Qual IDE você usa? (Cursor, Claude Code, VS Code)</li>
+                <li>Quais agentes quer instalar? (dev, pm, ux-expert, etc.)</li>
+                <li>Instalação full ou minimal?</li>
+            </ul>
+            <p><strong>Dica:</strong> Iniciante? Escolha instalação <strong>full</strong>.</p>
 
-            <h3>Pronto!</h3>
-            <p>Agora você já tem o BMad instalado e pronto para usar.</p>
+            <h3>Passo 2: Verificar se Funcionou</h3>
+            <code>npx bmad-method status</code>
+            <p><strong>O que você deve ver:</strong></p>
+            <code>
+✅ BMad Method v4.44.1
+✅ Installation Type: full
+✅ IDEs configured: cursor, claude-code
+✅ Agents installed: 8
+            </code>
+            <p>Se apareceu isso, instalou corretamente!</p>
+
+            <h3>Passo 3: Listar Seus Agentes</h3>
+            <code>npx bmad-method list:agents</code>
+            <p>Mostra todos os agentes disponíveis para você usar.</p>
+
+            <h3>⚠️ BMad NÃO é um app que "abre"</h3>
+            <p><strong>Importante:</strong> BMad não tem janela nem interface gráfica.</p>
+            <p>Ele funciona assim:</p>
+            <ul>
+                <li>❌ <strong>NÃO</strong> clique em ícone para abrir</li>
+                <li>✅ <strong>SIM</strong> execute comandos no terminal</li>
+                <li>✅ <strong>SIM</strong> use agentes dentro da sua IDE (Claude Code, Cursor)</li>
+            </ul>
+
+            <h3>4. Como Iniciar o BMad Após Instalação</h3>
+
+            <p><strong>Você NÃO precisa "iniciar" o BMad.</strong> Ele já está instalado e pronto.</p>
+
+            <p><strong>Para usar o BMad, você faz comandos:</strong></p>
+
+            <h4>Comandos no Terminal:</h4>
+            <code>npx bmad-method status</code>
+            <code>npx bmad-method list:agents</code>
+            <code>npx bmad-method list:expansions</code>
+
+            <h4>Comandos na IDE (Claude Code, Cursor):</h4>
+            <code>As dev, crie um formulário de contato</code>
+            <code>As pm, crie um PRD para app de delivery</code>
+            <code>As ux-expert, desenhe uma tela de login</code>
+
+            <h3>5. O Que Fazer Depois de Instalar</h3>
+
+            <p><strong>Teste 1: Verifique a instalação</strong></p>
+            <code>npx bmad-method status</code>
+            <p>Deve mostrar versão, tipo de instalação e agentes.</p>
+
+            <p><strong>Teste 2: Liste os agentes</strong></p>
+            <code>npx bmad-method list:agents</code>
+            <p>Você verá: dev, pm, ux-expert, architect, analyst, qa, etc.</p>
+
+            <p><strong>Teste 3: Veja pacotes de expansão</strong></p>
+            <code>npx bmad-method list:expansions</code>
+            <p>Mostra pacotes extras: jogos 2D, DevOps, mobile, etc.</p>
+
+            <p><strong>Teste 4: Use seu primeiro agente!</strong></p>
+            <p>Abra sua IDE (Claude Code ou Cursor) e digite:</p>
+            <code>As dev, liste os arquivos da pasta atual</code>
+            <p>✅ Se o agente responder, tudo funcionou!</p>
+
+            <h3>🔗 Integração com IDEs</h3>
+
+            <p><strong>BMad funciona com essas IDEs:</strong></p>
+            <ul>
+                <li><strong>Claude Code</strong> (VS Code + Claude)</li>
+                <li><strong>Cursor</strong> (IDE com IA integrada)</li>
+                <li><strong>VS Code</strong> (com extensões de IA)</li>
+                <li><strong>Gemini</strong> (Google AI Studio)</li>
+            </ul>
+
+            <p><strong>Como funciona:</strong></p>
+            <p>1. Você digita comando na IDE (chat lateral ou terminal)</p>
+            <p>2. IDE envia para o BMad</p>
+            <p>3. BMad ativa o agente certo</p>
+            <p>4. Agente executa e retorna resultado</p>
+
+            <p><strong>Exemplo prático no Claude Code:</strong></p>
+            <code>
+// No terminal integrado:
+npx bmad-method status
+
+// No chat lateral do Claude:
+As dev, crie uma função que valida email
+            </code>
+
+            <h3>✅ Pronto para Começar!</h3>
+            <p>Agora você sabe:</p>
+            <ul>
+                <li>✅ Como instalar o BMad</li>
+                <li>✅ Como testar se funcionou</li>
+                <li>✅ Que BMad NÃO abre como app</li>
+                <li>✅ Como rodar comandos via terminal</li>
+                <li>✅ Como usar agentes na IDE</li>
+            </ul>
+
+            <p><strong>Próxima lição:</strong> Conhecer todos os agentes disponíveis!</p>
         `
     },
     {
         id: 3,
         title: "Conhecendo os Agentes",
         content: `
-            <h2>Agentes Principais do BMad</h2>
-            <p>O BMad oferece diversos agentes especializados. Aqui estão os principais:</p>
+            <h2>Os 6 Agentes Principais (Na Ordem Certa!)</h2>
 
-            <h3>🚀 dev (Desenvolvedor Full Stack)</h3>
-            <p>Use para: Criar código, corrigir bugs, implementar funcionalidades</p>
-            <code>As dev, crie uma função que calcule juros compostos</code>
+            <p><strong>Por que ordem importa?</strong></p>
+            <p>Um projeto segue um fluxo lógico: <strong>Planejamento → Execução → Validação</strong></p>
+            <p>Use os agentes nesta sequência para melhores resultados:</p>
 
-            <h3>🎨 ux-expert (Designer UX/UI)</h3>
-            <p>Use para: Criar interfaces, wireframes, melhorar experiência do usuário</p>
-            <code>As ux-expert, desenhe uma tela de login moderna</code>
+            <h3>1. 🔍 analyst (Analista de Negócios)</h3>
+            <p><strong>Quando usar:</strong> Início do projeto, antes de tudo</p>
+            <p><strong>O que faz:</strong> Pesquisa de mercado, análise competitiva, requisitos</p>
+            <code>As analyst, pesquise apps de delivery e liste as principais features</code>
+            <p><em>✅ Resultado: Relatório de pesquisa, requisitos iniciais</em></p>
 
-            <h3>📋 pm (Gerente de Produto)</h3>
-            <p>Use para: Criar PRDs, definir estratégias, planejar features</p>
-            <code>As pm, crie um PRD para um app de delivery</code>
+            <h3>2. 📋 pm (Gerente de Produto)</h3>
+            <p><strong>Quando usar:</strong> Depois do analyst</p>
+            <p><strong>O que faz:</strong> Cria PRD (Product Requirements Document), define estratégia</p>
+            <code>As pm, crie um PRD para app de delivery baseado na pesquisa</code>
+            <p><em>✅ Resultado: Documento PRD completo com user stories</em></p>
 
-            <h3>🏗️ architect (Arquiteto de Software)</h3>
-            <p>Use para: Design de sistema, escolha de tecnologias, arquitetura</p>
-            <code>As architect, defina a arquitetura de um e-commerce</code>
+            <h3>3. 🏗️ architect (Arquiteto de Software)</h3>
+            <p><strong>Quando usar:</strong> Depois do PM, antes de programar</p>
+            <p><strong>O que faz:</strong> Define arquitetura técnica, escolhe tecnologias</p>
+            <code>As architect, defina arquitetura para o app de delivery</code>
+            <p><em>✅ Resultado: Diagrama de arquitetura, stack tecnológico</em></p>
 
-            <h3>🔍 analyst (Analista de Negócios)</h3>
-            <p>Use para: Pesquisa de mercado, análise competitiva, brainstorming</p>
-            <code>As analyst, faça uma análise de mercado para meu produto</code>
+            <h3>4. 🎨 ux-expert (Designer UX/UI)</h3>
+            <p><strong>Quando usar:</strong> Junto com architect, antes do dev</p>
+            <p><strong>O que faz:</strong> Cria wireframes, interfaces, design de telas</p>
+            <code>As ux-expert, crie wireframes das telas principais do app</code>
+            <p><em>✅ Resultado: Wireframes, mockups, guia de estilo</em></p>
 
-            <p><strong>Dica:</strong> Para ver todos os agentes disponíveis, use: <code>npx bmad-method list:agents</code></p>
+            <h3>5. 🚀 dev (Desenvolvedor Full Stack)</h3>
+            <p><strong>Quando usar:</strong> Depois de ter PRD, arquitetura e design</p>
+            <p><strong>O que faz:</strong> Escreve código, implementa funcionalidades</p>
+            <code>As dev, implemente o sistema de pedidos do app</code>
+            <p><em>✅ Resultado: Código funcional, features implementadas</em></p>
+
+            <h3>6. ✅ qa (Quality Assurance)</h3>
+            <p><strong>Quando usar:</strong> Depois do dev implementar</p>
+            <p><strong>O que faz:</strong> Cria testes, valida qualidade, encontra bugs</p>
+            <code>As qa, crie testes para o sistema de pedidos</code>
+            <p><em>✅ Resultado: Suite de testes, relatório de bugs</em></p>
+
+            <h3>📊 Tabela de Referência Rápida</h3>
+
+            <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
+                <thead>
+                    <tr style="background: var(--bg-card); border-bottom: 2px solid var(--border);">
+                        <th style="padding: 12px; text-align: left;">Agente</th>
+                        <th style="padding: 12px; text-align: left;">Função</th>
+                        <th style="padding: 12px; text-align: left;">Tipo de Tarefa</th>
+                        <th style="padding: 12px; text-align: left;">Exemplo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr style="border-bottom: 1px solid var(--border);">
+                        <td style="padding: 12px;"><strong>analyst</strong></td>
+                        <td style="padding: 12px;">Pesquisa</td>
+                        <td style="padding: 12px;">Análise de mercado, requisitos</td>
+                        <td style="padding: 12px;"><code>pesquise concorrentes</code></td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid var(--border); background: var(--bg-card);">
+                        <td style="padding: 12px;"><strong>pm</strong></td>
+                        <td style="padding: 12px;">Planejamento</td>
+                        <td style="padding: 12px;">PRD, roadmap, estratégia</td>
+                        <td style="padding: 12px;"><code>crie PRD completo</code></td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid var(--border);">
+                        <td style="padding: 12px;"><strong>architect</strong></td>
+                        <td style="padding: 12px;">Arquitetura</td>
+                        <td style="padding: 12px;">Design técnico, stack</td>
+                        <td style="padding: 12px;"><code>defina arquitetura</code></td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid var(--border); background: var(--bg-card);">
+                        <td style="padding: 12px;"><strong>ux-expert</strong></td>
+                        <td style="padding: 12px;">Design</td>
+                        <td style="padding: 12px;">Wireframes, UI, protótipos</td>
+                        <td style="padding: 12px;"><code>crie wireframes</code></td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid var(--border);">
+                        <td style="padding: 12px;"><strong>dev</strong></td>
+                        <td style="padding: 12px;">Código</td>
+                        <td style="padding: 12px;">Implementação, features</td>
+                        <td style="padding: 12px;"><code>implemente login</code></td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid var(--border); background: var(--bg-card);">
+                        <td style="padding: 12px;"><strong>qa</strong></td>
+                        <td style="padding: 12px;">Testes</td>
+                        <td style="padding: 12px;">Validação, testes, bugs</td>
+                        <td style="padding: 12px;"><code>crie testes unitários</code></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>💡 Fluxo Ideal de Um Projeto</h3>
+
+            <p><strong>Projeto pequeno (CRUD simples):</strong></p>
+            <p>pm → dev → qa</p>
+
+            <p><strong>Projeto médio (App completo):</strong></p>
+            <p>analyst → pm → architect → ux-expert → dev → qa</p>
+
+            <p><strong>Projeto grande (SaaS complexo):</strong></p>
+            <p>analyst → pm → architect → ux-expert → dev → qa → dev (ajustes) → qa (revalidação)</p>
+
+            <h3>🎯 Regra de Ouro</h3>
+
+            <p><strong>Não pule etapas!</strong> Especialmente:</p>
+            <ul>
+                <li>❌ <strong>NÃO</strong> peça pro dev sem ter PRD (pm)</li>
+                <li>❌ <strong>NÃO</strong> pule arquitetura em projetos complexos</li>
+                <li>❌ <strong>NÃO</strong> esqueça de testar (qa) depois de implementar</li>
+            </ul>
+
+            <p><strong>Ver todos os agentes:</strong></p>
+            <code>npx bmad-method list:agents</code>
+
+            <p><strong>Próxima lição:</strong> Comandos essenciais do BMad!</p>
         `
     },
     {
@@ -119,38 +325,153 @@ const lessons = [
     },
     {
         id: 5,
-        title: "Seu Primeiro Projeto",
+        title: "Entendendo o Comando 'As'",
         content: `
-            <h2>Criando Seu Primeiro Projeto com BMad</h2>
-            <p>Vamos criar um projeto simples passo a passo:</p>
+            <h2>O Comando "As": Chamando Seus Especialistas</h2>
 
-            <h3>Exemplo: Sistema de Agendamento</h3>
-            <p>Vamos criar um sistema básico de agendamento para consultórios.</p>
+            <h3>O Que Significa "As"?</h3>
+            <p><strong>"As" = "Atue como"</strong></p>
+            <p>É como você chama um especialista da sua equipe virtual.</p>
 
-            <h3>Passo 1: Planejar</h3>
-            <code>As analyst, ajude-me a definir os requisitos de um sistema de agendamento médico</code>
-
-            <h3>Passo 2: Criar PRD</h3>
-            <code>As pm, crie um PRD baseado nos requisitos que o analyst definiu</code>
-
-            <h3>Passo 3: Definir Arquitetura</h3>
-            <code>As architect, defina a arquitetura técnica deste sistema</code>
-
-            <h3>Passo 4: Criar Interface</h3>
-            <code>As ux-expert, crie wireframes das principais telas</code>
-
-            <h3>Passo 5: Implementar</h3>
-            <code>As dev, implemente a funcionalidade de agendamento seguindo a arquitetura</code>
-
-            <h3>Dicas:</h3>
+            <p><strong>Analogia:</strong></p>
+            <p>Imagine uma empresa com vários departamentos. Quando você precisa de algo:</p>
             <ul>
-                <li>Trabalhe por etapas, não tente fazer tudo de uma vez</li>
-                <li>Use o agente certo para cada tarefa</li>
-                <li>Peça revisões: "As qa, revise este código"</li>
-                <li>Documente: "As dev, adicione comentários ao código"</li>
+                <li>Você vai até a sala do desenvolvedor e diz: "Como desenvolvedor, crie esta função"</li>
+                <li>Você vai até o designer e diz: "Como designer, crie esta tela"</li>
+            </ul>
+            <p>No BMad, você faz a mesma coisa digitalmente: <code>As dev</code> = Atue como desenvolvedor</p>
+
+            <h3>Como o BMad Interpreta o Comando</h3>
+
+            <p><strong>Quando você digita:</strong></p>
+            <code>As dev, crie um formulário de login</code>
+
+            <p><strong>O BMad faz internamente:</strong></p>
+            <ol>
+                <li>Identifica o agente: <code>dev</code></li>
+                <li>Carrega o perfil do agente dev (habilidades, contexto, instruções)</li>
+                <li>Passa a tarefa: <code>crie um formulário de login</code></li>
+                <li>O agente dev executa usando seu conhecimento especializado</li>
+                <li>Retorna o resultado (código do formulário)</li>
+            </ol>
+
+            <h3>📋 Sintaxe Correta</h3>
+
+            <p><strong>Estrutura básica:</strong></p>
+            <code>As [nome do agente], [o que você quer]</code>
+
+            <p><strong>Exemplos corretos:</strong></p>
+            <ul>
+                <li>✅ <code>As dev, crie uma função de validação</code></li>
+                <li>✅ <code>As pm, crie um PRD para este projeto</code></li>
+                <li>✅ <code>As qa, teste esta funcionalidade</code></li>
             </ul>
 
-            <p><strong>Parabéns!</strong> Você agora sabe como criar projetos completos com BMad!</p>
+            <p><strong>Exemplos incorretos:</strong></p>
+            <ul>
+                <li>❌ <code>dev crie uma função</code> (falta "As")</li>
+                <li>❌ <code>Como dev, crie função</code> (use "As", não "Como")</li>
+                <li>❌ <code>As desenvolvedor, crie função</code> (use "dev", não "desenvolvedor")</li>
+            </ul>
+
+            <h3>🎯 Exemplos Práticos para Cada Agente</h3>
+
+            <h4>As analyst</h4>
+            <p><strong>Quando usar:</strong> Pesquisas, análises de mercado, levantamento de requisitos</p>
+            <code>As analyst, faça uma análise competitiva de apps de delivery</code>
+            <code>As analyst, liste os principais requisitos para um sistema de gestão</code>
+            <p><em>✅ Resultado: Relatório de análise, lista de requisitos</em></p>
+
+            <h4>As pm</h4>
+            <p><strong>Quando usar:</strong> Planejamento, documentação, estratégia de produto</p>
+            <code>As pm, crie um PRD para um app de finanças pessoais</code>
+            <code>As pm, defina o roadmap do projeto</code>
+            <p><em>✅ Resultado: Documento PRD, roadmap, user stories</em></p>
+
+            <h4>As architect</h4>
+            <p><strong>Quando usar:</strong> Decisões técnicas, escolha de tecnologias, arquitetura</p>
+            <code>As architect, defina a arquitetura de um sistema de e-commerce</code>
+            <code>As architect, escolha o melhor banco de dados para este projeto</code>
+            <p><em>✅ Resultado: Diagrama de arquitetura, stack tecnológico definido</em></p>
+
+            <h4>As ux-expert</h4>
+            <p><strong>Quando usar:</strong> Design de interfaces, wireframes, experiência do usuário</p>
+            <code>As ux-expert, crie wireframes de uma tela de cadastro</code>
+            <code>As ux-expert, melhore a usabilidade deste formulário</code>
+            <p><em>✅ Resultado: Wireframes, mockups, sugestões de UX</em></p>
+
+            <h4>As dev</h4>
+            <p><strong>Quando usar:</strong> Escrever código, implementar funcionalidades, corrigir bugs</p>
+            <code>As dev, implemente um sistema de autenticação com JWT</code>
+            <code>As dev, corrija o bug no formulário de login</code>
+            <p><em>✅ Resultado: Código funcional, bug corrigido</em></p>
+
+            <h4>As qa</h4>
+            <p><strong>Quando usar:</strong> Criar testes, validar qualidade, encontrar bugs</p>
+            <code>As qa, crie testes unitários para esta função</code>
+            <code>As qa, teste todos os fluxos do sistema de checkout</code>
+            <p><em>✅ Resultado: Suite de testes, relatório de bugs</em></p>
+
+            <h3>💡 Dicas Importantes</h3>
+
+            <p><strong>1. Use vírgula após o nome do agente:</strong></p>
+            <ul>
+                <li>✅ <code>As dev, crie função</code></li>
+                <li>❌ <code>As dev crie função</code> (sem vírgula)</li>
+            </ul>
+
+            <p><strong>2. Seja específico na tarefa:</strong></p>
+            <ul>
+                <li>✅ <code>As dev, crie uma função de validação de email usando regex</code></li>
+                <li>❌ <code>As dev, faça validação</code> (muito vago)</li>
+            </ul>
+
+            <p><strong>3. Um comando, um agente:</strong></p>
+            <ul>
+                <li>✅ <code>As dev, crie o código</code> (depois) <code>As qa, teste o código</code></li>
+                <li>❌ <code>As dev e qa, criem e testem</code> (não funciona)</li>
+            </ul>
+
+            <h3>🎯 Exemplo Prático Completo: Sistema de Agendamento</h3>
+
+            <p>Veja como usar o comando "As" em um projeto real:</p>
+
+            <h4>Passo 1: Análise</h4>
+            <code>As analyst, liste os requisitos essenciais de um sistema de agendamento médico</code>
+            <p><em>O analyst retorna: gestão de pacientes, calendário de horários, lembretes, etc.</em></p>
+
+            <h4>Passo 2: Planejamento</h4>
+            <code>As pm, crie um PRD baseado nos requisitos do analyst</code>
+            <p><em>O PM retorna: documento PRD completo com user stories</em></p>
+
+            <h4>Passo 3: Arquitetura</h4>
+            <code>As architect, defina a arquitetura técnica deste sistema</code>
+            <p><em>O Architect retorna: frontend React, backend Node.js, database PostgreSQL</em></p>
+
+            <h4>Passo 4: Design</h4>
+            <code>As ux-expert, crie wireframes das telas principais</code>
+            <p><em>O UX-Expert retorna: wireframes de login, dashboard, calendário</em></p>
+
+            <h4>Passo 5: Implementação</h4>
+            <code>As dev, implemente o módulo de agendamento seguindo a arquitetura</code>
+            <p><em>O Dev retorna: código funcional do sistema</em></p>
+
+            <h4>Passo 6: Testes</h4>
+            <code>As qa, crie testes para o fluxo de agendamento</code>
+            <p><em>O QA retorna: suite de testes completa</em></p>
+
+            <h3>✅ Resumo</h3>
+
+            <p><strong>O comando "As" é sua ferramenta principal no BMad.</strong></p>
+
+            <ul>
+                <li>✅ <strong>Significado:</strong> "Atue como"</li>
+                <li>✅ <strong>Sintaxe:</strong> <code>As [agente], [tarefa]</code></li>
+                <li>✅ <strong>Função:</strong> Chama o especialista certo para cada tarefa</li>
+                <li>✅ <strong>Analogia:</strong> Como pedir ajuda a um colega de equipe específico</li>
+            </ul>
+
+            <p><strong>Próxima lição:</strong> Casos de uso práticos por profissão!</p>
         `
     },
     {
