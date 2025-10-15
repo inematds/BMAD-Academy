@@ -3,16 +3,19 @@
 > Plataforma educacional interativa para aprender o **BMad Method** - Framework de agentes de IA que permite criar soluções complexas sem ser programador.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Version](https://img.shields.io/badge/version-2.0.0-blue.svg)](https://github.com/inematds/BMAD-Academy/releases)
+[![Version](https://img.shields.io/badge/version-2.1.0-blue.svg)](https://github.com/inematds/BMAD-Academy/releases)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
+[![BMAD Method](https://img.shields.io/badge/BMAD-v4.x-green.svg)](https://github.com/bmad-code-org/BMAD-METHOD)
 
-[🌐 Ver Academy Online](https://inematds.github.io/BMAD-Academy/) | [📚 Documentação](./BMAD_Academy-Doc.md) | [🐛 Reportar Bug](https://github.com/inematds/BMAD-Academy/issues) | [💡 Sugerir Feature](https://github.com/inematds/BMAD-Academy/issues/new)
+[🌐 Ver Academy Online](https://inematds.github.io/BMAD-Academy/) | [📚 Documentação](./BMAD_Academy-Doc.md) | [🔗 BMAD Oficial](https://github.com/bmad-code-org/BMAD-METHOD) | [💬 Discord](https://discord.gg/gk8jAdXWmj) | [🐛 Reportar Bug](https://github.com/inematds/BMAD-Academy/issues)
 
 ---
 
 ## 📖 Sobre o Projeto
 
-A **INEMA BMad Academy** é a primeira plataforma educacional em português dedicada ao ensino do **BMad Method**. Nosso objetivo é democratizar a criação de soluções tecnológicas, permitindo que qualquer pessoa - advogados, médicos, professores, empreendedores - possa criar sistemas complexos sem precisar saber programar.
+A **INEMA BMad Academy** é a primeira plataforma educacional em português dedicada ao ensino do **[BMad Method™](https://github.com/bmad-code-org/BMAD-METHOD)** - Universal AI Agent Framework para desenvolvimento agentic com IA.
+
+Nosso objetivo é democratizar a criação de soluções tecnológicas, permitindo que qualquer pessoa - advogados, médicos, professores, empreendedores - possa criar sistemas complexos sem precisar saber programar.
 
 ### 🎯 Para Quem é Este Projeto?
 
@@ -26,15 +29,15 @@ A **INEMA BMad Academy** é a primeira plataforma educacional em português dedi
 
 ## ✨ Funcionalidades
 
-### 📚 Tutorial Completo (15 Lições)
+### 📚 Tutorial Completo (15 Lições Revisadas - v2.1)
 
-Aprenda BMad do básico ao avançado:
+Aprenda BMad do básico ao avançado com conteúdo **direto e prático**:
 
-1. **O que é o BMad?** - Conceitos fundamentais
-2. **Instalando o BMad** - Setup passo a passo
-3. **Conhecendo os Agentes** - Dev, UX-Expert, PM, Architect, etc.
+1. **O que é o BMad?** - Crie soluções em 3 passos práticos
+2. **Instalando o BMad** - Setup completo + pós-instalação
+3. **Conhecendo os Agentes** - Ordem correta: Analyst → PM → Architect → UX-Expert → Dev → QA
 4. **Comandos Básicos** - Comandos essenciais do BMad
-5. **Seu Primeiro Projeto** - Projeto prático completo
+5. **Entendendo o Comando 'As'** - "Atue como" - Sintaxe e exemplos práticos
 6. **Casos de Uso Práticos** - Exemplos por profissão
 7. **Arquivos de Configuração** - Estrutura do `.bmad-core/`
 8. **Referência de Comandos** - Lista completa de comandos
@@ -46,11 +49,13 @@ Aprenda BMad do básico ao avançado:
 14. **Projetos Avançados** - 5 projetos complexos + desafios
 15. **Próximos Passos** - Comunidade e certificado
 
-### 🎮 Playground Interativo
+### 🎮 Playground Expandido (NOVO em v2.1)
 
-- Terminal simulado do BMad
-- 6 comandos de exemplo prontos
-- Feedback realista de comandos
+- **13 módulos práticos** organizados por nível (Básico, Intermediário, Avançado, Profissional)
+- **56+ tópicos** com exemplos interativos
+- **Desafios práticos** com sistema de verificação
+- Terminal simulado com comandos reais do BMad
+- Exemplos rápidos clicáveis
 - Testável sem instalação
 
 ### 💬 Chatbot Assistente
@@ -227,7 +232,7 @@ A documentação nunca está completa! Ajude a:
 
 ## 🗺️ Roadmap
 
-### Versão 2.0 ✅ (Atual)
+### Versão 2.0 ✅ (Lançamento Inicial)
 
 - [x] 15 lições completas
 - [x] Playground interativo melhorado
@@ -235,13 +240,23 @@ A documentação nunca está completa! Ajude a:
 - [x] Design responsivo
 - [x] Documentação completa
 
-### Versão 2.1 🔜 (Próxima)
+### Versão 2.1 ✅ (Atual - Revisão Educacional)
 
-- [ ] Sistema de desafios interativos
+- [x] **Lições revisadas** - Conteúdo direto, claro e prático
+- [x] **Lição 1** - Texto focado em "como usar" em 3 passos
+- [x] **Lição 2** - Tópicos 4 e 5 adicionados (pós-instalação + integração IDEs)
+- [x] **Lição 3** - Ordem correta dos agentes (Analyst → PM → Architect → UX → Dev → QA)
+- [x] **Lição 5** - Explicação completa do comando "As" (Atue como)
+- [x] **Playground expandido** - 13 módulos com 56+ tópicos práticos
+- [x] **Referências ao BMAD oficial** - Links para repositório e documentação
+- [x] Documentação técnica completa
+
+### Versão 2.2 🔜 (Próxima)
+
 - [ ] Sistema de progresso do usuário
-- [ ] Certificado de conclusão
-- [ ] GitHub Pages configurado
-- [ ] Screenshots e demos
+- [ ] Certificado digital de conclusão
+- [ ] Quiz interativo por lição
+- [ ] Screenshots e demos em vídeo
 
 ### Versão 3.0 🔮 (Futuro)
 
@@ -270,9 +285,20 @@ Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para ma
 
 ## 🙏 Agradecimentos
 
-- **BMad Method** - Framework que inspirou este projeto
+- **[BMad Method™](https://github.com/bmad-code-org/BMAD-METHOD)** - Universal AI Agent Framework oficial
+- **[Discord BMAD](https://discord.gg/gk8jAdXWmj)** - Comunidade oficial do BMAD
 - **Claude Code** - Ferramenta que auxiliou no desenvolvimento
 - **Comunidade Open Source** - Por todo o suporte e conhecimento compartilhado
+
+---
+
+## 🔗 Links Oficiais do BMAD Method
+
+- 🏠 **Repositório Oficial:** [github.com/bmad-code-org/BMAD-METHOD](https://github.com/bmad-code-org/BMAD-METHOD)
+- 📚 **Documentação Oficial:** [User Guide](https://github.com/bmad-code-org/BMAD-METHOD/blob/main/docs/user-guide.md)
+- 💬 **Discord Oficial:** [discord.gg/gk8jAdXWmj](https://discord.gg/gk8jAdXWmj)
+- 📦 **NPM Package:** `npx bmad-method install`
+- 📖 **Versão Estável:** v4.x | **Early Access:** v6 Alpha
 
 ---
 
@@ -309,4 +335,4 @@ Se este projeto te ajudou, considere:
 
 ---
 
-**Última Atualização:** Outubro 2024 | **Versão:** 2.0.0
+**Última Atualização:** Janeiro 2025 | **Versão:** 2.1.0 | **BMAD Method:** v4.x
