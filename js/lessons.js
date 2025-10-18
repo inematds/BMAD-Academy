@@ -129,13 +129,27 @@ const lessons = [
 
             <h3>🔗 Integração com IDEs</h3>
 
-            <p><strong>BMad funciona com essas IDEs:</strong></p>
+            <p><strong>BMad funciona com estas IDEs oficialmente suportadas:</strong></p>
             <ul>
-                <li><strong>Claude Code</strong> (VS Code + Claude)</li>
-                <li><strong>Cursor</strong> (IDE com IA integrada)</li>
-                <li><strong>VS Code</strong> (com extensões de IA)</li>
-                <li><strong>Gemini</strong> (Google AI Studio)</li>
+                <li><strong>Claude Code</strong> (VS Code + Claude) - Sintaxe: <code>/agente</code></li>
+                <li><strong>Cursor</strong> (IDE com IA integrada) - Sintaxe: <code>@agente</code></li>
+                <li><strong>VS Code + Copilot</strong> (GitHub Copilot) - Sintaxe: <code>@agente</code></li>
+                <li><strong>Windsurf</strong> (IDE Codeium) - Sintaxe: <code>@agente</code></li>
+                <li><strong>Gemini</strong> (Google AI Studio) - Sintaxe customizada</li>
+                <li><strong>OpenCode</strong> (via opencode.jsonc) - Sintaxe: arquivo JSON</li>
+                <li><strong>Codex CLI</strong> (Terminal) - Linguagem natural</li>
+                <li><strong>Codex Web</strong> (GitHub Web) - Via AGENTS.md</li>
             </ul>
+
+            <div style="background: var(--bg-card); padding: 15px; border-left: 4px solid var(--accent); margin: 20px 0;">
+                <p><strong>💡 Nota sobre Sintaxe:</strong></p>
+                <p>A sintaxe varia por IDE:</p>
+                <ul>
+                    <li><code>/agente</code> → Claude Code (slash)</li>
+                    <li><code>@agente</code> → Cursor, VS Code, Windsurf (arroba)</li>
+                    <li><code>As agente,</code> → Linguagem natural (funciona em todas)</li>
+                </ul>
+            </div>
 
             <p><strong>Como funciona:</strong></p>
             <p>1. Você digita comando na IDE (chat lateral ou terminal)</p>
@@ -148,8 +162,20 @@ const lessons = [
 // No terminal integrado:
 npx bmad-method status
 
-// No chat lateral do Claude:
+// No chat lateral do Claude (sintaxe slash):
+/dev crie uma função que valida email
+
+// Ou em linguagem natural (funciona em todas IDEs):
 As dev, crie uma função que valida email
+            </code>
+
+            <p><strong>Exemplo no Cursor/Windsurf:</strong></p>
+            <code>
+// Sintaxe arroba:
+@dev implemente função de login
+
+// Ou linguagem natural:
+As dev, implemente função de login
             </code>
 
             <h3>✅ Pronto para Começar!</h3>
@@ -169,11 +195,13 @@ As dev, crie uma função que valida email
         id: 3,
         title: "Conhecendo os Agentes",
         content: `
-            <h2>Os 6 Agentes Principais (Na Ordem Certa!)</h2>
+            <h2>Os Agentes do BMad Method</h2>
 
             <p><strong>Por que ordem importa?</strong></p>
             <p>Um projeto segue um fluxo lógico: <strong>Planejamento → Execução → Validação</strong></p>
             <p>Use os agentes nesta sequência para melhores resultados:</p>
+
+            <h3>🎯 6 Agentes Principais (Workflow Padrão)</h3>
 
             <h3>1. 🔍 analyst (Analista de Negócios)</h3>
             <p><strong>Quando usar:</strong> Início do projeto, antes de tudo</p>
@@ -261,6 +289,39 @@ As dev, crie uma função que valida email
                     </tr>
                 </tbody>
             </table>
+
+            <h3>🔧 Agentes Especializados Adicionais</h3>
+
+            <p>Além dos 6 principais, o BMad tem agentes especializados para tarefas específicas:</p>
+
+            <h4>📝 writer (Escritor Técnico)</h4>
+            <p><strong>Quando usar:</strong> Para documentação, READMEs, tutoriais</p>
+            <p><strong>O que faz:</strong> Cria documentação técnica clara e profissional</p>
+            <code>As writer, crie um README.md completo para este projeto</code>
+            <p><em>✅ Resultado: Documentação técnica, guias de usuário</em></p>
+
+            <h4>📊 data-scientist (Cientista de Dados)</h4>
+            <p><strong>Quando usar:</strong> Análise de dados, ML, estatística</p>
+            <p><strong>O que faz:</strong> Análise de dados, machine learning, visualizações</p>
+            <code>As data-scientist, analise estes dados de vendas e crie insights</code>
+            <p><em>✅ Resultado: Análises, modelos ML, visualizações</em></p>
+
+            <h4>📋 SM (Scrum Master)</h4>
+            <p><strong>Quando usar:</strong> Gerenciamento de sprints e stories (workflow avançado)</p>
+            <p><strong>O que faz:</strong> Gerencia stories, sprints, divide épicos em tarefas</p>
+            <code>As sm, crie stories para o próximo sprint baseado no épico</code>
+            <p><em>✅ Resultado: Stories detalhadas, tasks organizadas</em></p>
+
+            <h4>✅ PO (Product Owner)</h4>
+            <p><strong>Quando usar:</strong> Validação de documentos e sharding (workflow avançado)</p>
+            <p><strong>O que faz:</strong> Valida PRD/Architecture, divide docs em épicos/stories</p>
+            <code>As po, valide o PRD contra a arquitetura</code>
+            <code>As po, shard o PRD em épicos e stories</code>
+            <p><em>✅ Resultado: Documentos validados, épicos/stories geradas</em></p>
+
+            <div style="background: var(--bg-card); padding: 15px; border-left: 4px solid var(--primary); margin: 20px 0;">
+                <p><strong>💡 Nota:</strong> SM e PO são usados em workflows avançados de desenvolvimento. Você aprenderá sobre eles nas lições avançadas!</p>
+            </div>
 
             <h3>💡 Fluxo Ideal de Um Projeto</h3>
 
@@ -1835,6 +1896,112 @@ node_modules/
                 <strong>Gostou da academy? Dê uma ⭐ no GitHub!</strong><br>
                 <code>https://github.com/inematds/BMAD-Academy</code>
             </p>
+        `
+    },
+    {
+        id: 16,
+        title: "QA Test Architect (Avançado)",
+        content: `
+            <h2>QA como Test Architect Profissional</h2>
+
+            <p>O agente QA do BMad não é apenas um "revisor de código". Ele é um <strong>Test Architect</strong> profissional com comandos avançados para garantir qualidade em todas as fases do desenvolvimento.</p>
+
+            <h3>🎯 Os 6 Comandos do Test Architect</h3>
+
+            <h4>1. *risk - Análise de Riscos</h4>
+            <p><strong>Quando:</strong> Antes de codificar</p>
+            <code>@qa *risk docs/stories/epic1.story1-login.md</code>
+
+            <h4>2. *design - Test Design</h4>
+            <p><strong>Quando:</strong> Depois de *risk</p>
+            <code>@qa *design docs/stories/epic1.story1-login.md</code>
+
+            <h4>3. *trace - Requirements Tracing</h4>
+            <p><strong>Quando:</strong> Durante desenvolvimento</p>
+            <code>@qa *trace docs/stories/epic1.story1-login.md</code>
+
+            <h4>4. *nfr - Non-Functional Requirements</h4>
+            <p><strong>Quando:</strong> Durante ou após implementação</p>
+            <code>@qa *nfr docs/stories/epic1.story1-login.md</code>
+
+            <h4>5. *review - Comprehensive Review</h4>
+            <p><strong>Quando:</strong> Story marcada "Ready for Review"</p>
+            <code>@qa *review docs/stories/epic1.story1-login.md</code>
+
+            <h4>6. *gate - Quality Gate</h4>
+            <p><strong>Quando:</strong> Após *review e correções</p>
+            <code>@qa *gate docs/stories/epic1.story1-login.md</code>
+
+            <p><strong>Próxima lição:</strong> Workflow Completo do BMad</p>
+        `
+    },
+    {
+        id: 17,
+        title: "Workflow Completo BMad",
+        content: `
+            <h2>Workflow Completo: Planning → Development → Deploy</h2>
+
+            <p>Esta lição ensina o <strong>workflow profissional completo</strong> do BMad Method.</p>
+
+            <h3>🎯 As 3 Fases</h3>
+
+            <div style="background: var(--bg-card); padding: 20px; border-radius: 8px; margin: 20px 0;">
+                <ol>
+                    <li><strong>PLANNING</strong> - Criar PRD e Architecture (Web UI)</li>
+                    <li><strong>SHARDING</strong> - Dividir docs em épicos e stories (IDE)</li>
+                    <li><strong>DEVELOPMENT</strong> - Implementar story por story (IDE)</li>
+                </ol>
+            </div>
+
+            <h3>📋 FASE 1: Planning</h3>
+
+            <p><strong>Passo 1: Analyst</strong></p>
+            <code>@analyst faça análise competitiva de apps de delivery</code>
+
+            <p><strong>Passo 2: PM</strong></p>
+            <code>@pm crie um PRD completo para app de delivery</code>
+
+            <p><strong>Passo 3: Architect</strong></p>
+            <code>@architect defina arquitetura para o app</code>
+
+            <p><strong>Passo 4: UX-Expert (Opcional)</strong></p>
+            <code>@ux-expert crie front-end spec com wireframes</code>
+
+            <p><strong>Passo 5: PO</strong></p>
+            <code>@po valide o PRD contra a arquitetura</code>
+
+            <h3>📦 FASE 2: Sharding</h3>
+
+            <p><strong>Passo 6: PO - Shard PRD</strong></p>
+            <code>@po shard o PRD em épicos e salve em docs/epics/</code>
+
+            <p><strong>Passo 7: PO - Shard Architecture</strong></p>
+            <code>@po shard a arquitetura por módulos</code>
+
+            <h3>🚀 FASE 3: Development Loop</h3>
+
+            <p><strong>Repetir para cada story:</strong></p>
+
+            <ol>
+                <li><code>@sm draft next story from epic</code></li>
+                <li><code>@qa *risk story</code> (opcional)</li>
+                <li><code>@qa *design story</code></li>
+                <li><code>@dev *develop-story</code></li>
+                <li><code>@qa *review story</code></li>
+                <li>Commit e próxima story!</li>
+            </ol>
+
+            <p style="text-align: center; font-size: 1.5rem; margin: 40px 0;">
+                <strong>Parabéns! Você completou o BMAD Academy! 🎉</strong>
+            </p>
+
+            <p><strong>Próximos passos:</strong></p>
+            <ul>
+                <li>🚀 Crie seu primeiro projeto real com BMad</li>
+                <li>💬 Discord: <code>discord.gg/gk8jAdXWmj</code></li>
+                <li>📚 User Guide: <code>github.com/bmad-code-org/BMAD-METHOD</code></li>
+                <li>⭐ Estrela no GitHub: BMAD Academy</li>
+            </ul>
         `
     }
 ];

@@ -3,7 +3,7 @@
 > Plataforma educacional interativa para aprender o **BMad Method** - Framework de agentes de IA que permite criar soluções complexas sem ser programador.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Version](https://img.shields.io/badge/version-2.1.0-blue.svg)](https://github.com/inematds/BMAD-Academy/releases)
+[![Version](https://img.shields.io/badge/version-2.2.0-blue.svg)](https://github.com/inematds/BMAD-Academy/releases)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
 [![BMAD Method](https://img.shields.io/badge/BMAD-v4.x-green.svg)](https://github.com/bmad-code-org/BMAD-METHOD)
 
@@ -29,7 +29,7 @@ Nosso objetivo é democratizar a criação de soluções tecnológicas, permitin
 
 ## ✨ Funcionalidades
 
-### 📚 Tutorial Completo (15 Lições Revisadas - v2.1)
+### 📚 Tutorial Completo (17 Lições - v2.2)
 
 Aprenda BMad do básico ao avançado com conteúdo **direto e prático**:
 
@@ -48,6 +48,8 @@ Aprenda BMad do básico ao avançado com conteúdo **direto e prático**:
 13. **Boas Práticas** - Otimização e produtividade
 14. **Projetos Avançados** - 5 projetos complexos + desafios
 15. **Próximos Passos** - Comunidade e certificado
+16. **QA Test Architect (Avançado)** - Comandos *risk, *design, *trace, *nfr, *review, *gate
+17. **Workflow Completo BMad** - Planning → Sharding → Development → Deploy
 
 ### 🎮 Playground Expandido (NOVO em v2.1)
 
@@ -220,8 +222,8 @@ A documentação nunca está completa! Ajude a:
 
 | Métrica | Valor |
 |---------|-------|
-| **Lições** | 15 lições completas |
-| **Agentes Documentados** | 8+ agentes |
+| **Lições** | 17 lições completas |
+| **Agentes Documentados** | 10+ agentes (dev, pm, architect, ux-expert, analyst, qa, writer, data-scientist, sm, po) |
 | **Comandos Explicados** | 15+ comandos |
 | **Casos de Uso** | 4 profissões |
 | **Projetos Avançados** | 5 projetos completos |
@@ -251,11 +253,24 @@ A documentação nunca está completa! Ajude a:
 - [x] **Referências ao BMAD oficial** - Links para repositório e documentação
 - [x] Documentação técnica completa
 
-### Versão 2.2 🔜 (Próxima)
+### Versão 2.2 ✅ (Atual - Expansão Profissional)
 
+- [x] **17 lições completas** - Adicionadas lições 16 e 17
+- [x] **Lição 16: QA Test Architect** - Comandos avançados (*risk, *design, *trace, *nfr, *review, *gate)
+- [x] **Lição 17: Workflow Completo** - Planning → Sharding → Development completo
+- [x] **10 agentes documentados** - Adicionados SM, PO, writer, data-scientist
+- [x] **8 IDEs suportadas** - Claude Code, Cursor, VS Code, Windsurf, Gemini, OpenCode, Codex CLI, Codex Web
+- [x] **Knowledge.js expandido** - Novos tópicos: qa_advanced, workflow, sharding, quality_gates, sm_po
+- [x] **Sintaxe de invocação** - Explicação de @ vs / por IDE
+- [x] **Quality Gates** - Explicação completa de PASS/CONCERNS/FAIL/WAIVED
+- [x] **Sharding** - Conceito e uso de épicos/stories
+- [x] **Workflow 3 fases** - Planning, Sharding, Development
+
+### Versão 2.3 🔜 (Próxima)
+
+- [ ] Módulos playground 14 e 15 (QA Test Architect e Workflow)
+- [ ] Atualizar Lição 4 com comandos dos agentes
 - [ ] Sistema de progresso do usuário
-- [ ] Certificado digital de conclusão
-- [ ] Quiz interativo por lição
 - [ ] Screenshots e demos em vídeo
 
 ### Versão 3.0 🔮 (Futuro)
@@ -335,4 +350,4 @@ Se este projeto te ajudou, considere:
 
 ---
 
-**Última Atualização:** Janeiro 2025 | **Versão:** 2.1.0 | **BMAD Method:** v4.x
+**Última Atualização:** Janeiro 2025 | **Versão:** 2.2.0 | **BMAD Method:** v4.x
